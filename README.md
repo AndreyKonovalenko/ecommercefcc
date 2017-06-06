@@ -1,7 +1,7 @@
-#freeCodeCamp e-commerce project
+# freeCodeCamp e-commerce project
 
-###Usage:
+### Usage:
 
 Start development server: `npm run start:dev`
 
-Build and start production server: `npm start`
+Build and start production server: `npm run start:prod`
