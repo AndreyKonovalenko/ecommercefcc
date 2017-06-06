@@ -8,7 +8,8 @@
     "start:prod": "npm run build && node server",
     "start:dev": "concurrently \"json-server fake-api/db.json\" \"webpack-dev-server --inline --hot --host 0.0.0.0 --port 9000 --history-api-fallback\"",
     "build": "NODE_ENV=production webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
