@@ -1,10 +1,10 @@
-const path = require('path');
-const webpack = require('webpack');
+const path = require('path')
+const webpack = require('webpack')
 
-const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const config = {
     devtool: process.env.NODE_ENV === 'production' ? 'source-map' : 'source-map',
@@ -70,7 +70,7 @@ const config = {
         ]),
         new ExtractTextPlugin('styles.css')
     ]
-};
+}
 
 if (process.env.NODE_ENV === 'production') {
     config.plugins.push(
@@ -106,14 +106,14 @@ if (process.env.NODE_ENV === 'production') {
             }
         }),
         new ProgressBarPlugin()
-    );
+    )
 
     // Remove logging in production
     config.module.rules.push({
         test: /\.jsx?$/,
         use: ['strip-loader?strip[]=console.log'],
         exclude: /node_modules/
-    });
+    })
 }
 
-module.exports = config;
+module.exports = config

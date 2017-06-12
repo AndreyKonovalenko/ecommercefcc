@@ -1,5 +1,5 @@
-import React from 'react';
-import { Container, Row } from 'reactstrap';
+import React from 'react'
+import { Container, Row } from 'reactstrap'
 
 const Home = () => (
     <Container>
@@ -8,6 +8,6 @@ const Home = () => (
             <p className="container-item">Lets Rock</p>
         </Row>
     </Container>
-);
+)
 
-export default Home;
+export default Home

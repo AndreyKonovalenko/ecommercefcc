@@ -1,19 +1,19 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
-import rootReducer from './reducers';
+import { createStore, applyMiddleware, compose } from 'redux'
+import thunk from 'redux-thunk'
+import rootReducer from './reducers'
 
 if (!localStorage.getItem('reduxState')) {
-    localStorage.setItem('reduxState', JSON.stringify({}));
+    localStorage.setItem('reduxState', JSON.stringify({}))
 }
-const defaultState = JSON.parse(localStorage.getItem('reduxState'));
+const defaultState = JSON.parse(localStorage.getItem('reduxState'))
 
 export default function configureStore(initialState = defaultState) {
     const store = createStore(rootReducer, initialState, compose(applyMiddleware(thunk),
-        window.devToolsExtension ? window.devToolsExtension() : f => f));
+        window.devToolsExtension ? window.devToolsExtension() : f => f))
 
     store.subscribe(() => {
-        localStorage.setItem('reduxState', JSON.stringify(store.getState()));
-    });
+        localStorage.setItem('reduxState', JSON.stringify(store.getState()))
+    })
 
-    return store;
+    return store
 }
