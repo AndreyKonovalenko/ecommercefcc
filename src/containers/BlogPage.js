@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import { fetchBlogPostsIfNeeded } from '../store/actions/blogPostsActions'
 import BlogPost from '../components/BlogPost'
 
@@ -55,4 +56,4 @@ const mapDispatchToProps = dispatch => (
     }
 )
 
-export default connect(mapStateToProps, mapDispatchToProps)(Blog)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Blog))
