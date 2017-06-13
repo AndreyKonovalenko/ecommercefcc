@@ -29,10 +29,14 @@ export const fetchBlogPostsFailure = err => (
     }
 )
 
-const fetchBlogPosts = () => (dispatch) => {
+const fetchBlogPosts = id => (dispatch) => {
     dispatch(requestBlogPosts())
 
-    return fetch(`${apiUrl}/posts`)
+    let fetchUrl = `${apiUrl}/posts`
+    if (id) {
+        fetchUrl += `/${id}`
+    }
+    return fetch(fetchUrl)
         .then((response) => {
             if (!response.ok) {
                 throw Error(response.statusText)
@@ -51,9 +55,9 @@ const shouldFetchBlogPosts = (state) => {
     return !blogPosts.isFetching
 }
 
-export const fetchBlogPostsIfNeeded = () => (dispatch, getState) => {
+export const fetchBlogPostsIfNeeded = id => (dispatch, getState) => {
     if (shouldFetchBlogPosts(getState())) {
-        return dispatch(fetchBlogPosts())
+        return dispatch(fetchBlogPosts(id))
     }
     return Promise.resolve()
 }

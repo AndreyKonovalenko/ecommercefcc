@@ -17,9 +17,18 @@ const blogPosts = (state = defaultBlogPostsState, action) => {
                 isFetching: true
             })
         case FETCH_BLOG_POSTS_SUCCESS:
+            if (Array.isArray(action.blogPosts)) {
+                return Object.assign({}, state, {
+                    isFetching: false,
+                    items: action.blogPosts,
+                    error: action.error
+                })
+            }
             return Object.assign({}, state, {
                 isFetching: false,
-                items: action.blogPosts,
+                items: state.items
+                    .filter(item => item.id !== action.blogPosts.id)
+                    .concat(action.blogPosts),
                 error: action.error
             })
         case FETCH_BLOG_POSTS_FAILURE:
