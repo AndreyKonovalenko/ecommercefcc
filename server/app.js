@@ -12,13 +12,13 @@ app.use(morgan(':remote-addr - :remote-user [:date[clf]] "method :url HTTP/:http
 app.use(compression())
 
 // Serve static assets
-app.use(express.static(path.resolve(__dirname, '..', 'dist')))
+app.use(express.static(path.resolve(__dirname, '..', 'public')))
 
-app.use('/images', (express.static(path.resolve(__dirname, '..', 'dist', 'images'))))
+app.use('/images', (express.static(path.resolve(__dirname, '..', 'public', 'images'))))
 
 // Always return index.html
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '..', 'dist', 'index.html'))
+    res.sendFile(path.resolve(__dirname, '..', 'public', 'index.html'))
 })
 
 module.exports = app

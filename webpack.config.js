@@ -23,7 +23,7 @@ const config = {
     },
     target: 'web',
     output: {
-        path: path.join(__dirname, 'dist'),
+        path: path.join(__dirname, 'public'),
         filename: 'app.js',
         publicPath: '/'
     },
