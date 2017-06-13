@@ -10,6 +10,7 @@ import {
 import { Nav, NavItem, NavLink } from 'reactstrap'
 import HomePage from './HomePage'
 import BlogPage from './BlogPage'
+import BlogPostPage from './BlogPostPage'
 
 const history = createBrowserHistory()
 
@@ -23,7 +24,8 @@ const Root = ({ store }) => (
                 </Nav>
                 <div>
                     <Route exact path="/" component={HomePage} />
-                    <Route path="/blog" component={BlogPage} />
+                    <Route exact path="/blog" component={BlogPage} />
+                    <Route path="/blog/:id" component={BlogPostPage} />
                 </div>
             </div>
         </Router>
