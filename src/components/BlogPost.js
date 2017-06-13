@@ -1,18 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 const BlogPost = ({
     blogPost
 }) => (
-    <div>
+    blogPost.id ? <div>
         <p>Id: {blogPost.id}</p>
         <p>Title: {blogPost.title}</p>
         <p>Archived: {blogPost.archived.toString()}</p>
         <p>Article: {blogPost.article}</p>
         Cover: <img src={blogPost.cover} alt="Cover" />
         <p>Created at: {new Date(blogPost.publishedAt * 1000).toString()}</p>
-        <p>Permalink: {blogPost.permalink}</p>
-    </div>
+        <Link to={blogPost.permalink}>Permalink</Link>
+    </div> : null
 )
 
 BlogPost.propTypes = {
