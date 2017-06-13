@@ -1,4 +1,5 @@
 const express = require('express')
+const jsonServer = require('json-server')
 const morgan = require('morgan')
 const compression = require('compression')
 const path = require('path')
@@ -15,6 +16,9 @@ app.use(compression())
 app.use(express.static(path.resolve(__dirname, '..', 'public')))
 
 app.use('/images', (express.static(path.resolve(__dirname, '..', 'public', 'images'))))
+
+// Use json-server for fake api
+app.use('/api', jsonServer.router(path.resolve(__dirname, '..', 'fake-api', 'db.json')))
 
 // Always return index.html
 app.get('*', (req, res) => {

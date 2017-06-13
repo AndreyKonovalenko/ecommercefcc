@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "First blog post title",
+      "archived": false,
+      "article": "First blog post article",
+      "cover": "/images/mstile-70x70.png",
+      "publishedAt": 1497274607,
+      "permalink": "/blog"
+    },
+    {
+      "id": 2,
+      "title": "Second blog post title",
+      "archived": true,
+      "article": "Second blog post article",
+      "cover": "/images/mstile-70x70.png",
+      "publishedAt": 1497274635,
+      "permalink": "/blog"
+    }
+  ]
+}
