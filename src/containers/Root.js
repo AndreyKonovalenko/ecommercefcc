@@ -8,8 +8,8 @@ import {
     Link
 } from 'react-router-dom'
 import { Nav, NavItem, NavLink } from 'reactstrap'
-import Home from './Home'
-import Blog from './Blog'
+import HomePage from './HomePage'
+import BlogPage from './BlogPage'
 
 const history = createBrowserHistory()
 
@@ -22,8 +22,8 @@ const Root = ({ store }) => (
                     <NavItem><NavLink tag={Link} to="/blog">Blog</NavLink></NavItem>
                 </Nav>
                 <div>
-                    <Route exact path="/" component={Home} />
-                    <Route path="/blog" component={Blog} />
+                    <Route exact path="/" component={HomePage} />
+                    <Route path="/blog" component={BlogPage} />
                 </div>
             </div>
         </Router>

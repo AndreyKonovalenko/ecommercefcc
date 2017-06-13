@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { fetchBlogPostsIfNeeded } from '../store/actions/blogPostsActions'
+import BlogPost from '../components/BlogPost'
 
 class Blog extends Component {
     componentDidMount() {
@@ -16,13 +17,7 @@ class Blog extends Component {
                 <ul>
                     { blogPosts.map(blogPost => (
                         <li key={`blog-post-${blogPost.id}`}>
-                            <p>Id: {blogPost.id}</p>
-                            <p>Title: {blogPost.title}</p>
-                            <p>Archived: {blogPost.archived.toString()}</p>
-                            <p>Article: {blogPost.article}</p>
-                            Cover: <img src={blogPost.cover} alt="Cover" />
-                            <p>Created at: {new Date(blogPost.publishedAt * 1000).toString()}</p>
-                            <p>Permalink: {blogPost.permalink}</p>
+                            <BlogPost blogPost={blogPost} />
                         </li>
                     ))}
                 </ul>
@@ -32,7 +27,15 @@ class Blog extends Component {
 }
 
 Blog.propTypes = {
-    blogPosts: PropTypes.array.isRequired,
+    blogPosts: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number,
+        title: PropTypes.string,
+        archived: PropTypes.bool,
+        article: PropTypes.string,
+        cover: PropTypes.string,
+        publishedAt: PropTypes.number,
+        permalink: PropTypes.string
+    })).isRequired,
     fetchError: PropTypes.string.isRequired,
     fetchBlogPosts: PropTypes.func.isRequired
 }
@@ -44,7 +47,7 @@ const mapStateToProps = state => (
     }
 )
 
-const mapDispatchToProps = (dispatch) => (
+const mapDispatchToProps = dispatch => (
     {
         fetchBlogPosts: () => {
             dispatch(fetchBlogPostsIfNeeded())

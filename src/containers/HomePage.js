@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Row } from 'reactstrap'
 
-const Home = () => (
+const HomePage = () => (
     <Container>
         <Row>
             <h1 className="container-item">Welcome to the Club</h1>
@@ -10,4 +10,4 @@ const Home = () => (
     </Container>
 )
 
-export default Home
+export default HomePage
