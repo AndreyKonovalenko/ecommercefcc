@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server",
     "start:prod": "npm run build && node server",
-    "start:dev": "webpack-dev-server --inline --hot --host 0.0.0.0 --port 9000 --history-api-fallback",
+    "start:dev": "concurrently \"json-server fake-api/db.json\" \"webpack-dev-server --inline --hot --host 0.0.0.0 --port 9000 --history-api-fallback\"",
     "build": "NODE_ENV=production webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -49,6 +49,7 @@
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
+    "concurrently": "^3.4.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.4",
     "eslint": "^3.19.0",

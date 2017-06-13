@@ -68,7 +68,10 @@ const config = {
         new CopyWebpackPlugin([
             { from: 'images/', to: 'images/' }
         ]),
-        new ExtractTextPlugin('styles.css')
+        new ExtractTextPlugin('styles.css'),
+        new webpack.EnvironmentPlugin({
+            NODE_ENV: 'dev'
+        })
     ]
 }
 

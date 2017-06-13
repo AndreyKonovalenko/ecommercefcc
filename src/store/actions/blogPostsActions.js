@@ -1,10 +1,12 @@
 import fetch from 'isomorphic-fetch'
-
+import config from '../../config'
 import {
     REQUEST_BLOG_POSTS,
     FETCH_BLOG_POSTS_SUCCESS,
     FETCH_BLOG_POSTS_FAILURE
 } from '../actionTypes'
+
+const apiUrl = config[process.env.NODE_ENV].apiUrl
 
 export const requestBlogPosts = () => (
     {
@@ -30,7 +32,7 @@ export const fetchBlogPostsFailure = err => (
 const fetchBlogPosts = () => (dispatch) => {
     dispatch(requestBlogPosts())
 
-    return fetch('/api/posts')
+    return fetch(`${apiUrl}/posts`)
         .then((response) => {
             if (!response.ok) {
                 throw Error(response.statusText)
