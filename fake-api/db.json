@@ -7,7 +7,7 @@
       "article": "First blog post article",
       "cover": "/images/mstile-70x70.png",
       "publishedAt": 1497274607,
-      "permalink": "/blog"
+      "permalink": "/blog/first-blog-post-title-1"
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "article": "Second blog post article",
       "cover": "/images/mstile-70x70.png",
       "publishedAt": 1497274635,
-      "permalink": "/blog"
+      "permalink": "/blog/second-blog-post-title-2"
     }
   ]
 }
