@@ -13,7 +13,7 @@ import Blog from './Blog'
 
 const history = createBrowserHistory()
 
-const Root = ({ store, }) => (
+const Root = ({ store }) => (
     <Provider store={store}>
         <Router history={history}>
             <div>
