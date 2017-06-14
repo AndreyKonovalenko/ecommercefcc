@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { fetchBlogPostsIfNeeded } from '../store/actions/blogPostsActions'
 import BlogPost from '../components/BlogPost'
+import { Jumbotron, Container, Row, Col, Button } from 'reactstrap'
 
 class Blog extends Component {
     componentDidMount() {
@@ -13,15 +14,24 @@ class Blog extends Component {
         const { blogPosts, fetchError } = this.props
         return (
             <div>
-                <h1>freeCodeCamp e-commerce project{'\''}s blog</h1>
-                { fetchError && <p>Could not get new blog posts.</p> }
-                <ul>
-                    { blogPosts.map(blogPost => (
-                        <li key={`blog-post-${blogPost.id}`}>
-                            <BlogPost blogPost={blogPost} />
-                        </li>
-                    ))}
-                </ul>
+              <Jumbotron>
+                <h1 className="display-3">freeCodeCamp e-commerce project's blog</h1>
+                <p className="lead">Soon in this section you will see more information about our project!</p>
+              </Jumbotron>
+              <Container>
+                <Row>
+                  <Col sm="12" md={{ size: 8, offset: 2 }}>
+                      { fetchError && <p>Could not get new blog posts.</p> }
+                      <ul>
+                          { blogPosts.map(blogPost => (
+                              <li key={`blog-post-${blogPost.id}`}>
+                                  <BlogPost blogPost={blogPost} />
+                              </li>
+                          ))}
+                      </ul>
+                  </Col>
+                </Row>
+              </Container>
             </div>
         )
     }

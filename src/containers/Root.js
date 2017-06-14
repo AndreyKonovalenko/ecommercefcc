@@ -11,6 +11,7 @@ import { Nav, NavItem, NavLink } from 'reactstrap'
 import HomePage from './HomePage'
 import BlogPage from './BlogPage'
 import BlogPostPage from './BlogPostPage'
+import { Container, Row, Col } from 'reactstrap'
 
 const history = createBrowserHistory()
 
@@ -27,6 +28,17 @@ const Root = ({ store }) => (
                     <Route exact path="/blog" component={BlogPage} />
                     <Route path="/blog/:id" component={BlogPostPage} />
                 </div>
+                <footer>
+                  <Container>
+                    <Row>
+                        <Col>
+                          <p>
+                            2017 freeCodeCamp e-commerce
+                          </p>
+                        </Col>
+                    </Row>
+                  </Container>
+                </footer>
             </div>
         </Router>
     </Provider>
