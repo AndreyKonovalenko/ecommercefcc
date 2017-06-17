@@ -1,19 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'
-import {
-    Link
-} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-class Header extends React.Component {
-    constructor(props) {
-        super(props)
-
-        this.toggle = this.toggle.bind(this)
-        this.state = {
-            isOpen: false
-        }
+class Header extends Component {
+    state = {
+        isOpen: false
     }
-    toggle() {
+    toggle = () => {
         this.setState({
             isOpen: !this.state.isOpen
         })
