@@ -1,13 +1,13 @@
 import React from 'react'
-import { Container, Row } from 'reactstrap'
+import { Jumbotron } from 'reactstrap'
 
 const HomePage = () => (
-    <Container>
-        <Row>
-            <h1 className="container-item">Welcome to the Club</h1>
-            <p className="container-item">Lets Rock!!!</p>
-        </Row>
-    </Container>
+    <div>
+        <Jumbotron>
+            <h1 className="display-3">Welcome to the Club</h1>
+            <p className="lead">Lets Rock!!!</p>
+        </Jumbotron>
+    </div>
 )
 
 export default HomePage
