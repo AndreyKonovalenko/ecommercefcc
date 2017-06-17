@@ -4,10 +4,8 @@ import { Provider } from 'react-redux'
 import createBrowserHistory from 'history/createBrowserHistory'
 import {
     BrowserRouter as Router,
-    Route,
-    Link
+    Route
 } from 'react-router-dom'
-import { Nav, NavItem, NavLink, Container, Row, Col } from 'reactstrap'
 import HomePage from './HomePage'
 import BlogPage from './BlogPage'
 import BlogPostPage from './BlogPostPage'
