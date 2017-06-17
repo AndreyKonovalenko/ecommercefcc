@@ -7,7 +7,7 @@ import {
     Route,
     Link
 } from 'react-router-dom'
-import { Nav, NavItem, NavLink } from 'reactstrap'
+import { Nav, NavItem, NavLink, Container, Row, Col } from 'reactstrap'
 import HomePage from './HomePage'
 import BlogPage from './BlogPage'
 import BlogPostPage from './BlogPostPage'
@@ -27,6 +27,17 @@ const Root = ({ store }) => (
                     <Route exact path="/blog" component={BlogPage} />
                     <Route path="/blog/:id" component={BlogPostPage} />
                 </div>
+                <footer>
+                    <Container>
+                        <Row>
+                            <Col>
+                                <p>
+                                    2017 freeCodeCamp e-commerce
+                                </p>
+                            </Col>
+                        </Row>
+                    </Container>
+                </footer>
             </div>
         </Router>
     </Provider>

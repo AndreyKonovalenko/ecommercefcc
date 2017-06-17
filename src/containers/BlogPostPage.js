@@ -10,7 +10,7 @@ class BlogPostPage extends Component {
         this.props.fetchBlogPosts(this.props.blogPostId)
     }
     render() {
-        const { blogPost } = this.props;
+        const { blogPost } = this.props
         return (
             <BlogPost blogPost={blogPost} />
         )
