@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'
-import { Link } from 'react-router-dom'
+import { NavLink as RRNavLink } from 'react-router-dom'
 
 class Header extends Component {
     state = {
@@ -20,10 +20,10 @@ class Header extends Component {
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <NavLink tag={Link} to="/">Home</NavLink>
+                                <NavLink exact activeClassName="active" tag={RRNavLink} to="/">Home</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink tag={Link} to="/blog">Blog</NavLink>
+                                <NavLink activeClassName="active" tag={RRNavLink} to="/blog">Blog</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>
