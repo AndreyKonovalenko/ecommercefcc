@@ -11,9 +11,10 @@ import BlogPage from './BlogPage'
 import BlogPostPage from './BlogPostPage'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import BlogPostCreate from './BlogPostCreate'
 import AdminBlogPage from './admin/AdminBlogPage'
 import AdminBlogPostPage from './admin/AdminBlogPostPage'
+import BlogPostCreate from './admin/BlogPostCreate'
+
 
 const history = createBrowserHistory()
 
@@ -24,11 +25,11 @@ const Root = ({ store }) => (
                 <Header />
                 <div>
                     <Route exact path="/" component={HomePage} />
-                    <Route path="/admin/blog/post/new" component={BlogPostCreate} />
                     <Route exact path="/blog" component={BlogPage} />
                     <Route path="/blog/:id" component={BlogPostPage} />
                     <Route exact path="/admin/blog" component={AdminBlogPage} />
                     <Route path="/admin/blog/:id" component={AdminBlogPostPage} />
+                    <Route exact path="/admin/blog/post/new" component={BlogPostCreate} />
                 </div>
                 <Footer />
             </div>
